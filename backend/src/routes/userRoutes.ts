@@ -7,6 +7,8 @@ const router = express.Router()
 
 router.post("/signup", async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
+        console.log("Received Data:", req.body); // ✅ Log input for debugging
+
         const { name, username, email, password } = req.body
 
         if (!name || !username || !email || !password ) {

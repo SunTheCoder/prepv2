@@ -12,7 +12,7 @@ dotenv.config()
 
 const app = express()
 
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT
 
 app.use(helmet())
 
@@ -36,7 +36,7 @@ const limiter = rateLimit({
 
 app.use(limiter)
 
-app.use("api/users", userRoutes)
+app.use("/api/users", userRoutes)
 
 app.get("/", (req, res) => {
     res.send("API is running...");
