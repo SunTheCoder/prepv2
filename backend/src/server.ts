@@ -5,6 +5,9 @@ import cors from "cors"
 import cookieparser from "cookie-parser"
 import rateLimit from "express-rate-limit"
 
+//Route imports
+import userRoutes from "./routes/userRoutes"
+
 dotenv.config()
 
 const app = express()
@@ -32,6 +35,8 @@ const limiter = rateLimit({
 });
 
 app.use(limiter)
+
+app.use("api/users", userRoutes)
 
 app.get("/", (req, res) => {
     res.send("API is running...");

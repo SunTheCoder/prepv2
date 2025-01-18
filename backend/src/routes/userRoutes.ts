@@ -133,10 +133,9 @@ router.put("/:id", async (req: Request, res: Response, next: NextFunction): Prom
     } catch (error) {
 
         next(error)
-        
+
     }
 })
-
 
 router.delete("/:id", async (req: Request, res: Response): Promise<void> => {
     try {
@@ -161,3 +160,5 @@ router.delete("/:id", async (req: Request, res: Response): Promise<void> => {
 
     }
 })
+
+export default router
